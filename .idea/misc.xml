@@ -5,6 +5,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/sms-discovery-sever-service/pom.xml" />
+        <option value="$PROJECT_DIR$/sms-login-service/pom.xml" />
       </list>
     </option>
   </component>
