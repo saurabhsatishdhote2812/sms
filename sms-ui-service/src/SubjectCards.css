@@ -1,0 +1,54 @@
+/* Make the entire page fill the viewport */
+.subject-cards-page {
+  background-color: rgb(145, 228, 37);
+  padding: 20px;
+  text-align: center;
+  width: 96.5vw; /* Full width */
+  height: 95vh; /* Full height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Title Styling */
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  color: rgba(33, 93, 20, 0.756);
+  margin-bottom: 15px;
+  margin-top: -55px
+}
+
+/* Subtitle Styling */
+.subtitle {
+  font-size: 24px;
+  color: #08263dad;
+  margin-bottom: 50px;
+}
+
+/* Subject Cards Layout */
+.subject-cards-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2-column layout */
+  gap: 20px;
+  width: 60%;
+  padding-left: 15px;
+}
+
+/* Subject Card Styling */
+.subject-card {
+  width: 50%;
+  padding: 20px;
+  background-color: rgb(74, 219, 178);
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  font-size: 20px;
+}
+
+.subject-card:hover {
+  background-color: darkblue;
+}

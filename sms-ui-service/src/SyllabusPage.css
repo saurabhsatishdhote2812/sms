@@ -1,0 +1,73 @@
+/* Make the entire syllabus page fill the viewport */
+.syllabus-container {
+  background-color: rgb(189, 182, 81); /* Grey background */
+  padding: 20px;
+  text-align: center;
+  width: 97.5vw;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: initial;
+}
+
+/* Styling for the title */
+h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: rgb(72, 19, 19); /* White title */
+  margin-bottom: 20px;
+  text-shadow: #1a6cb4e7;
+}
+
+/* Center the table */
+table {
+  border-collapse: collapse;
+  width: 70%;
+  margin: initial;
+  opacity: 0;
+  animation: fadeIn 1s forwards, slideUp 1s forwards;
+  margin-top: 25px;
+}
+
+/* Table header styling */
+th {
+  background-color: #55300cf4; /* Darker shade for contrast */
+  color: white;
+  padding: 12px;
+}
+
+/* Table cells styling */
+td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+  background-color: #a89927;
+}
+
+/* Smooth hover effect for rows */
+tr:hover {
+  background-color: #1a6cb4e7;
+  color: rgb(255, 255, 255);
+  transition: 0.3s;
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide-up effect */
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
