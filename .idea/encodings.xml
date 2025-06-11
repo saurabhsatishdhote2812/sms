@@ -3,5 +3,6 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/sms-discovery-sever-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sms-login-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sms-syllabus-service/src/main/java" charset="UTF-8" />
   </component>
 </project>

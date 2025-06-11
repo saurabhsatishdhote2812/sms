@@ -14,7 +14,7 @@ const LoginPage = () => {
     e.preventDefault();
     console.log('Logging in with', username, password);
     try {
-        const response = await axios.post('http://localhost:8080/sms/login', {
+        const response = await axios.post('http://localhost:8081/sms/login', {
             username: username,
             password: password
         }, {
