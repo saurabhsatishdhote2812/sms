@@ -11,7 +11,7 @@ const SyllabusPage = () => {
   useEffect(() => {
     const fetchSyllabus = async () => {
       try {
-        const response = await fetch(`http://localhost:8083/sms/getSyllabus/${subjectName}`);
+        const response = await fetch(`http://localhost:8082/sms/getSyllabus/${subjectName}`);
         if (!response.ok) throw new Error("Failed to fetch syllabus");
         const data = await response.json();
 
