@@ -59,3 +59,40 @@
 .login-button:hover {
   background-color: #1a5be0;
 }
+
+/* ...existing code... */
+.password-input-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.toggle-password-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: -2.5rem;
+  font-size: 1.2rem;
+  outline: none;
+}
+
+.login-error {
+  color: #d32f2f;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.spinner {
+  border: 3px solid #eee;
+  border-top: 3px solid #3498db;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

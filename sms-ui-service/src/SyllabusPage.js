@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "./SyllabusPage.css";
 
 const SyllabusPage = () => {
-  const { subjectName } = useParams(); // Get subject from URL
+  const { subjectName } = useParams();
+  const navigate = useNavigate();
   const [syllabus, setSyllabus] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -11,11 +12,12 @@ const SyllabusPage = () => {
   useEffect(() => {
     const fetchSyllabus = async () => {
       try {
+        setLoading(true);
+        setError(null);
         const response = await fetch(`http://localhost:8082/sms/getSyllabus/${subjectName}`);
-        if (!response.ok) throw new Error("Failed to fetch syllabus");
+        if (!response.ok) throw new Error("Failed to fetch syllabus. Please try again later.");
         const data = await response.json();
 
-        // Convert JSON structure to array of units & topics
         const syllabusArray = data.flatMap(subject =>
           subject.units.map((unit, index) => ({
             serial: index + 1,
@@ -24,7 +26,7 @@ const SyllabusPage = () => {
           }))
         );
 
-        setSyllabus(syllabusArray.length ? syllabusArray : [{ serial: "-", unit: "No syllabus available", topics: "" }]);
+        setSyllabus(syllabusArray.length ? syllabusArray : []);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -37,18 +39,21 @@ const SyllabusPage = () => {
 
   return (
     <div className="syllabus-container">
+      <button className="back-btn" onClick={() => navigate("/subjects")}>← Back to Subjects</button>
       <h2>{subjectName} Syllabus</h2>
       {loading ? (
-        <p>Loading...</p>
+        <div className="spinner"></div>
       ) : error ? (
-        <p className="error">{error}</p>
+        <p className="error" role="alert">{error}</p>
+      ) : syllabus.length === 0 ? (
+        <p className="empty-state">No syllabus available for this subject.</p>
       ) : (
-        <table>
+        <table className="syllabus-table">
           <thead>
             <tr>
-              <th>S.No</th>
-              <th>Units</th>
-              <th>Topics</th>
+              <th scope="col">S.No</th>
+              <th scope="col">Units</th>
+              <th scope="col">Topics</th>
             </tr>
           </thead>
           <tbody>

@@ -1,54 +1,55 @@
-/* Make the entire page fill the viewport */
-.subject-cards-page {
-  background-color: rgb(145, 228, 37);
-  padding: 20px;
-  text-align: center;
-  width: 96.5vw; /* Full width */
-  height: 95vh; /* Full height */
+/* ...existing code... */
+.subject-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.subject-card {
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 2rem 1rem 1.5rem 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  outline: none;
+  min-height: 220px;
 }
 
-/* Title Styling */
-.title {
-  font-size: 36px;
-  font-weight: bold;
-  color: rgba(33, 93, 20, 0.756);
-  margin-bottom: 15px;
-  margin-top: -55px
-}
-
-/* Subtitle Styling */
-.subtitle {
-  font-size: 24px;
-  color: #08263dad;
-  margin-bottom: 50px;
-}
-
-/* Subject Cards Layout */
-.subject-cards-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2-column layout */
-  gap: 20px;
-  width: 60%;
-  padding-left: 15px;
-}
-
-/* Subject Card Styling */
-.subject-card {
-  width: 50%;
-  padding: 20px;
-  background-color: rgb(74, 219, 178);
-  color: white;
-  text-align: center;
-  border-radius: 10px;
-  cursor: pointer;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
-  font-size: 20px;
-}
-
+.subject-card:focus,
 .subject-card:hover {
-  background-color: darkblue;
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 6px 24px rgba(52, 152, 219, 0.15);
+  border-color: #3498db;
+}
+
+.subject-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.subject-desc {
+  color: #666;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 2rem;
+  color: #2c3e50;
+}
+
+.subtitle {
+  text-align: center;
+  color: #888;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
 }
